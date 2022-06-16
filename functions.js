@@ -153,7 +153,7 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    return arr.map(animal => [['name', animal.name], ['type', animal.type]]);
 }
 
 ////////////////////////////////////////////////////////
@@ -182,7 +182,7 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    return arr.filter(vehicle => vehicle.type === 'car');
 }
 
 /*
@@ -195,7 +195,7 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    return arr.filter(vehicle => vehicle.type === 'car').filter(car => car.make === 'chevy');
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -212,9 +212,10 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    return arr.reduce((acc, curr) => (
+        acc + curr.model
+    ), '');
 }
-
 /*
 (add all ages)
 
